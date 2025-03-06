@@ -1,0 +1,78 @@
+<script setup lang="ts">
+import MenuList from './components/MenuList.vue'
+
+const menuOpen = ref(false)
+
+function toggleMenu() {
+  menuOpen.value = !menuOpen.value
+}
+</script>
+
+<template>
+  <div class="header-top">
+    <v-container class="py-2">
+      <v-toolbar density="compact" color="white" height="80">
+        <v-app-bar-nav-icon class="d-block d-md-none" variant="text" @click.stop="toggleMenu" />
+
+        <v-toolbar-title style="max-width: 120px">
+          <router-link to="/">
+            <v-img max-width="120" src="@images/logo/logo.png" cover />
+          </router-link>
+        </v-toolbar-title>
+
+        <v-spacer />
+
+        <v-list
+          class="align-items mx-auto parent d-none d-md-flex"
+          active-class="font-weight-bold text-primary"
+        >
+          <MenuList />
+        </v-list>
+
+        <v-spacer />
+
+        <v-btn
+          prepend-icon="mdi-account-outline"
+          text="會員登入"
+          rounded
+          color="primary"
+          variant="flat"
+          size="large"
+          to="/signin"
+        />
+      </v-toolbar>
+
+      <v-navigation-drawer v-model="menuOpen" temporary>
+        <v-card flat class="pa-4">
+          <div class="d-flex align-center justify-between">
+            <router-link to="/" class="w-100">
+              <v-img max-width="120" src="@images/logo/logo.png" cover />
+            </router-link>
+
+            <v-icon icon="mdi-close" @click="toggleMenu" />
+          </div>
+
+          <v-list class="parent" active-class="font-weight-bold text-primary mt-5">
+            <MenuList />
+          </v-list>
+        </v-card>
+      </v-navigation-drawer>
+    </v-container>
+  </div>
+</template>
+
+<style scoped>
+.header-top {
+  box-shadow: 0px 1px 3px 0px rgba(17, 17, 17, 0.1);
+}
+
+:deep(.v-list-item--active:hover > .v-list-item__overlay),
+:deep(.parent .v-list-item:hover > .v-list-item__overlay) {
+  opacity: 0;
+}
+
+:deep(.v-list-item__prepend),
+:deep(.v-list-item__append) {
+  display: block;
+}
+</style>

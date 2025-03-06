@@ -1,0 +1,18 @@
+.v-list-item--active > .v-list-item__overlay,
+.v-list-item[aria-haspopup='menu'][aria-expanded='true'] > .v-list-item__overlay {
+  opacity: 0;
+}
+
+.v-menu > .v-overlay__content > .v-list {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 1920px) {
+  .v-container {
+    max-width: 1310px !important;
+  }
+
+  .v-container--fluid {
+    max-width: 100% !important;
+  }
+}

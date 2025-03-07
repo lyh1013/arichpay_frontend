@@ -42,7 +42,14 @@ export default defineConfig((): UserConfig => {
         eslintrc: {
           enabled: true,
         },
-        imports: ['vue', '@vueuse/core', 'pinia', 'vue-router', unheadVueComposablesImports],
+        imports: [
+          'vue',
+          '@vueuse/core',
+          'pinia',
+          'vue-router',
+          'vee-validate',
+          unheadVueComposablesImports,
+        ],
         dirs: ['./src/stores', './src/composables'],
         vueTemplate: true,
       }),

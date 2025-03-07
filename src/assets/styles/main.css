@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .v-list-item--active > .v-list-item__overlay,
 .v-list-item[aria-haspopup='menu'][aria-expanded='true'] > .v-list-item__overlay {
   opacity: 0;
@@ -5,6 +9,22 @@
 
 .v-menu > .v-overlay__content > .v-list {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.v-card-item .v-card-title {
+  font-weight: 600;
+}
+
+.v-card--variant-elevated {
+  box-shadow:
+    0 3px 12px rgba(var(--v-shadow-key-umbra-color), var(--v-shadow-md-opacity)),
+    0 0 transparent,
+    0 0 transparent;
+}
+
+.v-text-field .v-input__details {
+  padding-inline: 0;
+  padding: 6px 0;
 }
 
 @media (min-width: 1920px) {

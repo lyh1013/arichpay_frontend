@@ -7,6 +7,9 @@ import router from './router'
 import vuetify from '@/libs/vuetify'
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar'
 
+import '@/libs/vee-validate/index'
+
+import 'animate.css'
 import './assets/styles/main.css'
 import 'vue3-perfect-scrollbar/style.css'
 

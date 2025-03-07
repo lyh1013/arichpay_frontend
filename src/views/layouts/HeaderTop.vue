@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import MenuList from './components/MenuList.vue'
 
+import { useDisplay } from 'vuetify'
+
+const { mdAndUp } = useDisplay()
+
 const menuOpen = ref(false)
 
 function toggleMenu() {
@@ -9,9 +13,9 @@ function toggleMenu() {
 </script>
 
 <template>
-  <div class="header-top">
+  <div class="">
     <v-container class="py-2">
-      <v-toolbar density="compact" color="white" height="80">
+      <v-toolbar density="compact" color="transparent" height="80">
         <v-app-bar-nav-icon class="d-block d-md-none" variant="text" @click.stop="toggleMenu" />
 
         <v-toolbar-title style="max-width: 120px">
@@ -23,13 +27,15 @@ function toggleMenu() {
         <v-spacer />
 
         <v-list
-          class="align-items mx-auto parent d-none d-md-flex"
+          class="align-items mx-auto parent d-none d-md-flex py-0 bg-transparent"
           active-class="font-weight-bold text-primary"
+          density="compact"
+          rounded="xl"
         >
           <MenuList />
         </v-list>
 
-        <v-spacer />
+        <v-spacer v-show="mdAndUp" />
 
         <v-btn
           prepend-icon="mdi-account-outline"
@@ -37,7 +43,7 @@ function toggleMenu() {
           rounded
           color="primary"
           variant="flat"
-          size="large"
+          :size="mdAndUp ? 'large' : 'default'"
           to="/signin"
         />
       </v-toolbar>
@@ -62,7 +68,7 @@ function toggleMenu() {
 </template>
 
 <style scoped>
-.header-top {
+.header-sticky {
   box-shadow: 0px 1px 3px 0px rgba(17, 17, 17, 0.1);
 }
 
@@ -74,5 +80,9 @@ function toggleMenu() {
 :deep(.v-list-item__prepend),
 :deep(.v-list-item__append) {
   display: block;
+}
+
+.v-toolbar__content > .v-toolbar-title {
+  margin-inline-start: 0;
 }
 </style>

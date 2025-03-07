@@ -3,12 +3,12 @@ import { newsData } from '@/fake-data/news'
 </script>
 
 <template>
-  <vscrollbar style="height: calc(100vh - 300px)">
-    <v-table fixed-header class="table">
+  <vscrollbar style="height: calc(100vh - 300px)" class="table">
+    <v-table fixed-header class="pa-4">
       <thead>
         <tr>
           <th width="">發布日期</th>
-          <th width="">訊息摘要</th>
+          <th width="20%">訊息摘要</th>
           <th width="50%">訊息描述</th>
           <th width="">發布人</th>
         </tr>
@@ -35,6 +35,8 @@ import { newsData } from '@/fake-data/news'
   padding: 12px 16px;
 }
 
-.v-table .v-table__wrapper > table > tbody > tr:not(:last-child) > td:first-child {
+.table {
+  box-shadow: 0px 26px 45.4px 0px rgba(186, 193, 225, 0.72);
+  border-radius: 24px;
 }
 </style>

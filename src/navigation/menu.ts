@@ -1,7 +1,3 @@
-// type Child = { to: string }
-// type Children = Child & { name: string }
-// const a: Children = { to: '', name: '' }
-
 type Menu = {
   to?: string
   title: string

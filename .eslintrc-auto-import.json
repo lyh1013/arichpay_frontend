@@ -344,6 +344,7 @@
     "useSubmitForm": true,
     "useValidateField": true,
     "useValidateForm": true,
-    "validate": true
+    "validate": true,
+    "useAuth": true
   }
 }

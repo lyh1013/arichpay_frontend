@@ -15,11 +15,16 @@ export default createVuetify({
     VNumberInput,
   },
   directives,
+  // locale: {
+  //   adapter: createVueI18nAdapter({ i18n: VueI18n, useI18n }),
+  // },
   theme: {
     themes: {
       light: {
         colors: {
           primary: '#3E36A7',
+          'primary-darken': '#312B85',
+          'primary-darken-1': '#807da3',
           'primary-lighten-1': '#C5C2E4',
         },
         variables: {
@@ -44,6 +49,32 @@ export default createVuetify({
   defaults: {
     global: {
       ripple: false,
+    },
+    VCard: {
+      rounded: 'xl',
+    },
+    VBtn: {
+      color: 'primary',
+      rounded: 'xl',
+    },
+    VTextField: {
+      variant: 'outlined',
+      density: 'comfortable',
+      color: 'primary',
+      hideDetails: 'auto',
+    },
+    VFileInput: {
+      variant: 'outlined',
+      density: 'compact',
+      color: 'primary',
+      hideDetails: 'auto',
+    },
+    VAlert: {
+      density: 'comfortable',
+      variant: 'tonal',
+      VBtn: {
+        color: undefined,
+      },
     },
   },
   display: {

@@ -2,6 +2,12 @@ a {
   text-decoration: none;
 }
 
+.form-title {
+  margin-bottom: 0.675rem;
+  font-size: 1.05rem;
+  color: rgb(var(--v-theme-primary-darken));
+}
+
 .v-list-item--active > .v-list-item__overlay,
 .v-list-item[aria-haspopup='menu'][aria-expanded='true'] > .v-list-item__overlay {
   opacity: 0;

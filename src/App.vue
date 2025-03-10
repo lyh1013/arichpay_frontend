@@ -4,6 +4,11 @@ import { navigation } from '@/navigation/index'
 
 const route = useRoute()
 
+const LayoutAuth = defineAsyncComponent({
+  loader: () => import('./views/layouts/LayoutAuth.vue'),
+  delay: 0,
+})
+
 const LayoutInner = defineAsyncComponent({
   loader: () => import('./views/layouts/LayoutInner.vue'),
   delay: 0,
@@ -17,12 +22,21 @@ const LayoutMisc = defineAsyncComponent({
 const layout = computed(() => {
   if (route.name === undefined) return ''
 
-  if (route.meta.layout === 'misc') return LayoutMisc
-
-  return LayoutInner
+  switch (route.meta.layout) {
+    case 'auth':
+      return LayoutAuth
+    case 'misc':
+      return LayoutMisc
+    default:
+      return LayoutInner
+  }
 })
 </script>
 
 <template>
-  <component :is="layout" />
+  <VLocaleProvider locale="zhHant">
+    <VApp>
+      <component :is="layout" />
+    </VApp>
+  </VLocaleProvider>
 </template>

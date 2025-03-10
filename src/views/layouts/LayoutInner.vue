@@ -1,14 +1,14 @@
 <script setup lang="ts">
+import { useDisplay } from 'vuetify'
 import HeaderTop from './HeaderTop.vue'
 
-const route = useRoute()
+const { mdAndUp } = useDisplay()
 </script>
 
 <template>
   <v-layout
-    class="d-flex flex-column"
-    :class="{ background: route.meta.resource !== 'auth' }"
-    style="overflow: visible"
+    class="d-flex flex-column w-100 background"
+    :style="{ overflow: mdAndUp ? 'hidden' : 'auto' }"
   >
     <HeaderTop />
 

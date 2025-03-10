@@ -3,26 +3,24 @@ import { newsData } from '@/fake-data/news'
 </script>
 
 <template>
-  <vscrollbar style="height: calc(100vh - 300px)" class="table">
-    <v-table fixed-header class="pa-4">
-      <thead>
-        <tr>
-          <th width="">發布日期</th>
-          <th width="20%">訊息摘要</th>
-          <th width="50%">訊息描述</th>
-          <th width="">發布人</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in newsData" :key="item.id">
-          <td>{{ item.date }}</td>
-          <td>{{ item.short }}</td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.publisher }}</td>
-        </tr>
-      </tbody>
-    </v-table>
-  </vscrollbar>
+  <v-table fixed-header class="pa-4 table">
+    <thead>
+      <tr>
+        <th width="">發布日期</th>
+        <th width="20%">訊息摘要</th>
+        <th width="50%">訊息描述</th>
+        <th width="">發布人</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="item in newsData" :key="item.id">
+        <td>{{ item.date }}</td>
+        <td>{{ item.short }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.publisher }}</td>
+      </tr>
+    </tbody>
+  </v-table>
 </template>
 
 <style scoped>
@@ -38,5 +36,20 @@ import { newsData } from '@/fake-data/news'
 .table {
   box-shadow: 0px 26px 45.4px 0px rgba(186, 193, 225, 0.72);
   border-radius: 24px;
+  height: calc(100vh - 300px);
+}
+
+:deep(.v-table__wrapper::-webkit-scrollbar) {
+  width: 6px;
+}
+
+:deep(.v-table__wrapper::-webkit-scrollbar-track) {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+:deep(.v-table__wrapper::-webkit-scrollbar-thumb) {
+  background: #ccc;
+  border-radius: 10px;
 }
 </style>

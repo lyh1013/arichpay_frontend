@@ -19,7 +19,6 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
         prepend-icon="mdi-text-box-search-outline"
         text="對帳單查詢"
         class="w-100 search-btn animate__animated animate__fadeInUp animate__faster"
-        rounded="xl"
         variant="flat"
         to="/statement"
       />
@@ -30,7 +29,6 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
         prepend-icon="mdi-text-box-search-outline "
         text="折讓單查詢"
         class="w-100 search-btn animate__animated animate__fadeInUp animate__faster"
-        rounded="xl"
         variant="flat"
         to="/credit-note"
       />
@@ -39,12 +37,11 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
     <v-col cols="12">
       <v-card
         class="pa-6 animate__animated animate__fadeInUp"
-        rounded="xl"
         prepend-icon="mdi-login"
         title="快速登入"
         min-height="350"
       >
-        <v-form @submit.prevent="onSubmit" class="mt-4">
+        <v-form @submit.prevent="onSubmit" class="mt-4 d-flex flex-column ga-6">
           <TextField name="account" label="帳號" prepend-inner-icon="mdi-account-outline" />
 
           <TextField
@@ -54,16 +51,7 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
             prepend-inner-icon="mdi-lock-outline"
           />
 
-          <v-btn
-            :loading
-            color="primary"
-            size="large"
-            type="submit"
-            variant="tonal"
-            block
-            rounded
-            text="登入"
-          />
+          <v-btn :loading size="large" type="submit" variant="tonal" block text="登入" />
         </v-form>
       </v-card>
     </v-col>

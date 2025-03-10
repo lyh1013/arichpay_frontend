@@ -7,7 +7,7 @@ import CallToActions from './CallToActions.vue'
   <v-container class="py-md-10 py-8" style="height: calc(100vh - 80px)">
     <v-row class="ga-4">
       <v-col cols="12" class="order-2 order-md-1 animate__animated animate__fadeInDown">
-        <v-chip class="mb-1 bg-white" variant="flat">
+        <v-chip class="mb-1 bg-white" variant="outlined" color="primary-darken-1">
           <v-icon icon="mdi-creation" start class="rounded-xl" />
           <span class="">Breaking news</span>
         </v-chip>

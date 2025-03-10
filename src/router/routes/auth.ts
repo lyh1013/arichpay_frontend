@@ -4,8 +4,8 @@ export default [
     name: 'signin',
     component: () => import('@/views/auth/SigninView.vue'),
     meta: {
+      layout: 'auth',
       requiresAuth: true,
-      resource: 'auth',
     },
   },
   {
@@ -13,8 +13,17 @@ export default [
     name: 'forget',
     component: () => import('@/views/auth/ForgetView.vue'),
     meta: {
+      layout: 'auth',
       requiresAuth: true,
-      resource: 'auth',
+    },
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: () => import('@/views/auth/ProfileView.vue'),
+    meta: {
+      layout: 'auth',
+      requiresAuth: true,
     },
   },
 ]

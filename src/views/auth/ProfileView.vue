@@ -34,45 +34,50 @@ const onSubmit = handleSubmit(async (values: Record<string, any>) => {
               <v-col cols="12" sm="6">
                 <TextField
                   name="account"
-                  label="帳號"
                   prepend-inner-icon="mdi-account-outline"
-                  disabled
+                  label="帳號"
+                  readonly
+                  variant="plain"
                 />
               </v-col>
 
               <v-col cols="12" sm="6">
                 <TextField
                   name="name"
-                  label="名稱"
                   prepend-inner-icon="mdi-account-outline"
-                  disabled
+                  label="名稱"
+                  readonly
+                  variant="plain"
                 />
               </v-col>
 
               <v-col cols="12" sm="6">
                 <TextField
                   name="id_number"
-                  label="統一編號"
                   prepend-inner-icon="mdi-card-text-outline"
-                  disabled
+                  label="統一編號"
+                  readonly
+                  variant="plain"
                 />
               </v-col>
 
               <v-col cols="12" sm="6">
                 <TextField
                   name="payment_term"
-                  label="付款條件"
                   prepend-inner-icon="mdi-comment-text-outline"
-                  disabled
+                  label="付款條件"
+                  readonly
+                  variant="plain"
                 />
               </v-col>
 
               <v-col cols="12" sm="6">
                 <TextField
                   name="cashier"
-                  label="收款員"
                   prepend-inner-icon="mdi-account-cash-outline"
-                  disabled
+                  label="收款員"
+                  readonly
+                  variant="plain"
                 />
               </v-col>
 
@@ -80,7 +85,6 @@ const onSubmit = handleSubmit(async (values: Record<string, any>) => {
                 <TextField name="tel" label="電話" prepend-inner-icon="mdi-phone-outline" />
               </v-col>
 
-              <!-- TODOS: multiple  -->
               <v-col cols="12" sm="6">
                 <TextField name="email" label="E-mail" prepend-inner-icon="mdi-email-outline" />
               </v-col>
@@ -109,16 +113,99 @@ const onSubmit = handleSubmit(async (values: Record<string, any>) => {
                   prepend-inner-icon="mdi-lock-outline"
                 />
               </v-col>
+              <!-- <v-col cols="12" md="6">
+                <v-row class="ga-2">
+                  <v-col cols="12">
+                    <TextField
+                      name="account"
+                      prepend-inner-icon="mdi-account-outline"
+                      label="帳號"
+                      readonly
+                      variant="plain"
+                    />
+                  </v-col>
+
+                  <v-col cols="12">
+                    <TextField
+                      name="name"
+                      prepend-inner-icon="mdi-account-outline"
+                      label="名稱"
+                      readonly
+                      variant="plain"
+                    />
+                  </v-col>
+
+                  <v-col cols="12">
+                    <TextField
+                      name="id_number"
+                      prepend-inner-icon="mdi-card-text-outline"
+                      label="統一編號"
+                      readonly
+                      variant="plain"
+                    />
+                  </v-col>
+
+                  <v-col cols="12">
+                    <TextField
+                      name="payment_term"
+                      prepend-inner-icon="mdi-comment-text-outline"
+                      label="付款條件"
+                      readonly
+                      variant="plain"
+                    />
+                  </v-col>
+
+                  <v-col cols="12">
+                    <TextField
+                      name="cashier"
+                      prepend-inner-icon="mdi-account-cash-outline"
+                      label="收款員"
+                      readonly
+                      variant="plain"
+                    />
+                  </v-col>
+                </v-row>
+              </v-col> -->
+
+              <!-- <v-col cols="12" md="6">
+                <v-row>
+                  <v-col cols="12">
+                    <TextField name="tel" label="電話" prepend-inner-icon="mdi-phone-outline" />
+                  </v-col>
+
+                  <v-col cols="12">
+                    <TextField name="email" label="E-mail" prepend-inner-icon="mdi-email-outline" />
+                  </v-col>
+
+                  <v-col cols="12">
+                    <TextField
+                      name="invoice_address"
+                      label="發票地址"
+                      prepend-inner-icon="mdi-invoice-text-outline"
+                    />
+                  </v-col>
+
+                  <v-col cols="12">
+                    <TextField
+                      name="delivery_address"
+                      label="送貨地址"
+                      prepend-inner-icon="mdi-package-variant-closed-check"
+                    />
+                  </v-col>
+
+                  <v-col cols="12">
+                    <TextField
+                      name="password"
+                      type="password"
+                      label="密碼"
+                      prepend-inner-icon="mdi-lock-outline"
+                    />
+                  </v-col>
+                </v-row>
+              </v-col> -->
 
               <v-col cols="12">
-                <v-file-input
-                  name="file"
-                  label="文件上傳"
-                  rounded="lg"
-                  show-size
-                  prepend-inner-icon="mdi-upload-outline"
-                  prepend-icon=""
-                />
+                <v-file-upload density="compact" title="上傳檔案" clearable rounded="lg" />
               </v-col>
 
               <v-col cols="12" class="d-flex justify-center align-center ga-2 mt-2">
@@ -133,4 +220,8 @@ const onSubmit = handleSubmit(async (values: Record<string, any>) => {
   </v-row>
 </template>
 
-<style scoped></style>
+<style scoped>
+:deep(.mdi-cloud-upload::before) {
+  color: rgb(var(--v-theme-primary));
+}
+</style>

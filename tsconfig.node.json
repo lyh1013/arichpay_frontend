@@ -7,7 +7,13 @@
     "nightwatch.conf.*",
     "playwright.config.*",
     "eslint.config.*",
-    "./env.d.ts"
+    "src/**/*.ts",
+    "./env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "./app.config.ts",
+    "./auto-imports.d.ts",
+    "./components.d.ts"
   ],
   "compilerOptions": {
     "noEmit": true,
@@ -15,6 +21,14 @@
 
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "types": ["node", "vite/client"]
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@": ["./src"],
+      "@/*": ["./src/*"],
+      "@images/*": ["./src/assets/images/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@appConfig": ["./app.config.ts"],
+      "@i18n": ["./src/libs/i18n/index.ts"]
+    }
   }
 }

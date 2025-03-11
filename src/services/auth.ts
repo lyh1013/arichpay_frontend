@@ -1,8 +1,7 @@
 import { axios, $authHttp } from '@/libs/axios'
-import cfg from '@appConfig'
 
 class AuthService {
-  async login(data: Record<string, any>) {
+  async login(data: { account: string; password: string }) {
     const response = await axios.get(cfg.API_URL('sanctum/csrf-cookie'))
 
     if ([204].includes(response.status)) {
@@ -16,7 +15,7 @@ class AuthService {
     })
   }
 
-  async forgot(data: Record<string, any>) {
+  async forgot(data: { email: string }) {
     const response = await axios.get(cfg.API_URL('sanctum/csrf-cookie'))
 
     if ([204].includes(response.status)) {

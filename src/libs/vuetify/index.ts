@@ -3,21 +3,28 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import { createVueI18nAdapter } from 'vuetify/locale/adapters/vue-i18n'
 
 import { VNumberInput } from 'vuetify/labs/VNumberInput'
+import { VFileUpload } from 'vuetify/labs/VFileUpload'
+import { VDateInput } from 'vuetify/labs/VDateInput'
 
 import '@mdi/font/css/materialdesignicons.css'
+
+import { VueI18n } from '../i18n'
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   components: {
     ...components,
     VNumberInput,
+    VFileUpload,
+    VDateInput,
   },
   directives,
-  // locale: {
-  //   adapter: createVueI18nAdapter({ i18n: VueI18n, useI18n }),
-  // },
+  locale: {
+    adapter: createVueI18nAdapter({ i18n: VueI18n, useI18n }),
+  },
   theme: {
     themes: {
       light: {
@@ -64,6 +71,12 @@ export default createVuetify({
       hideDetails: 'auto',
     },
     VFileInput: {
+      variant: 'outlined',
+      density: 'compact',
+      color: 'primary',
+      hideDetails: 'auto',
+    },
+    VDateInput: {
       variant: 'outlined',
       density: 'compact',
       color: 'primary',

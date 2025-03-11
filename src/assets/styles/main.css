@@ -33,6 +33,14 @@ a {
   padding: 6px 0;
 }
 
+.v-field.v-field--active .v-label.v-field-label--floating {
+  font-size: 0.95rem;
+}
+
+.v-field--variant-plain .v-label.v-field-label--floating {
+  transform: translateY(-24px);
+}
+
 @media (min-width: 1920px) {
   .v-container {
     max-width: 1310px !important;

@@ -14,7 +14,7 @@ import HeaderTop from './HeaderTop.vue'
 
       <v-container
         style="height: calc(100vh - 80px)"
-        class="d-block d-md-flex align-center justify-center"
+        class="d-table d-md-flex align-center justify-center"
       >
         <RouterView />
       </v-container>

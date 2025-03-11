@@ -36,7 +36,7 @@ export const navigation = reactive<Navigation>({
   'credit-note': {
     title: '折讓單查詢',
   },
-  account: {
+  profile: {
     title: '會員資料',
   },
 })

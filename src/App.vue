@@ -1,8 +1,16 @@
 <script lang="ts" setup>
 import { navigation } from '@/navigation/index'
-// import { createHead } from 'unhead/server'
 
 const route = useRoute()
+
+useHeadSafe({
+  title: () => {
+    if (!route.name) return ''
+
+    return navigation[route.name].title ?? ''
+  },
+  titleTemplate: (title) => (title ? title + ' - ' : '') + i18n.t('sitename'),
+})
 
 const LayoutAuth = defineAsyncComponent({
   loader: () => import('./views/layouts/LayoutAuth.vue'),
@@ -34,7 +42,7 @@ const layout = computed(() => {
 </script>
 
 <template>
-  <VLocaleProvider locale="zhHant">
+  <VLocaleProvider>
     <VApp>
       <component :is="layout" />
     </VApp>

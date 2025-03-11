@@ -38,7 +38,7 @@ export default defineConfig((): UserConfig => {
         },
       }),
       AutoImport({
-        dts: true,
+        dts: './auto-imports.d.ts',
         eslintrc: {
           enabled: true,
         },
@@ -49,15 +49,17 @@ export default defineConfig((): UserConfig => {
           'vue-router',
           'vee-validate',
           unheadVueComposablesImports,
+          {
+            'vue-i18n': ['createI18n', 'useI18n'],
+            '@appConfig': ['cfg'],
+            '@i18n': ['i18n'],
+          },
         ],
         dirs: ['./src/stores', './src/composables'],
         vueTemplate: true,
       }),
       Components({
         dts: true,
-        eslintrc: {
-          enabled: true,
-        },
         dirs: ['./src/components'],
       }),
     ],
@@ -76,6 +78,7 @@ export default defineConfig((): UserConfig => {
         '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
         '@images': fileURLToPath(new URL('./src/assets/images', import.meta.url)),
         '@appConfig': fileURLToPath(new URL('./app.config.ts', import.meta.url)),
+        '@i18n': fileURLToPath(new URL('./src/libs/i18n/index.ts', import.meta.url)),
       },
     },
     server: {

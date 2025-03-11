@@ -345,6 +345,13 @@
     "useValidateField": true,
     "useValidateForm": true,
     "validate": true,
-    "useAuth": true
+    "useAuth": true,
+    "cfg": true,
+    "createI18n": true,
+    "useI18n": true,
+    "VueI18n": true,
+    "i18n": true,
+    "getActiveHead": true,
+    "createHead": true
   }
 }

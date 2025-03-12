@@ -38,18 +38,4 @@ import { newsData } from '@/fake-data/news'
   border-radius: 24px;
   height: calc(100vh - 300px);
 }
-
-:deep(.v-table__wrapper::-webkit-scrollbar) {
-  width: 6px;
-}
-
-:deep(.v-table__wrapper::-webkit-scrollbar-track) {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-:deep(.v-table__wrapper::-webkit-scrollbar-thumb) {
-  background: #ccc;
-  border-radius: 10px;
-}
 </style>

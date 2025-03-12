@@ -1,6 +1,8 @@
-import { shallowRef } from 'vue'
+import type { ShallowRef } from 'vue'
 
-export function useState(initalState: boolean) {
+type StateInstance = [ShallowRef<boolean>, (status: boolean) => void]
+
+export function useState(initalState: boolean): StateInstance {
   const state = shallowRef(initalState)
 
   function update(newState: boolean) {

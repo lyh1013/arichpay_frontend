@@ -41,6 +41,21 @@ a {
   transform: translateY(-24px);
 }
 
+.v-table__wrapper::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.v-table__wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.v-table__wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
 @media (min-width: 1920px) {
   .v-container {
     max-width: 1310px !important;

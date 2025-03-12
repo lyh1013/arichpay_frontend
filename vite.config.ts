@@ -21,7 +21,7 @@ export default defineConfig((): UserConfig => {
     plugins: [
       vue({ template: { transformAssetUrls } }),
       // basicSsl(),
-      vueDevTools(),
+      // vueDevTools(),
       Unfonts({
         google: {
           preconnect: true,

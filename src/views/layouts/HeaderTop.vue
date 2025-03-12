@@ -15,7 +15,7 @@ function toggleMenu() {
 </script>
 
 <template>
-  <v-container class="py-2">
+  <v-container class="py-2 d-print-none">
     <v-toolbar density="compact" color="transparent" height="80">
       <v-app-bar-nav-icon class="d-block d-md-none" variant="text" @click.stop="toggleMenu" />
 

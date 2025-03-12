@@ -10,11 +10,23 @@ type Statement = {
   note: string
 }
 
+type CreditNoote = {
+  id: number
+  date: string
+  invoice_number: string
+  name: string
+  count: number
+  price: string
+  total: string
+  tax: string
+  tax_type: string
+}
+
 export const statementData: Statement[] = [
   {
     id: 1,
     date: '2025/03/10',
-    invoice_number: 'GV19573624',
+    invoice_number: 'GV19573623',
     product_code: 'A-ONSD',
     name: '帕金寧定(盒裝) 2毫克 1000粒 / 盒',
     sale: '20盒',
@@ -159,8 +171,8 @@ export const statementData: Statement[] = [
     date: '2025/03/20',
     invoice_number: 'GV19573624',
     product_code: 'A-ONSD',
-    name: '帕金寧定(盒裝) 2毫克 1000粒 / 盒',
-    sale: '50盒',
+    name: '諾安命注射液',
+    sale: '30盒',
     price: '12,300',
     subtotal: '12,138',
     note: '',
@@ -175,5 +187,41 @@ export const statementData: Statement[] = [
     price: '12,300',
     subtotal: '12,138',
     note: '',
+  },
+]
+
+export const creditNoteData: CreditNoote[] = [
+  {
+    id: 1,
+    date: '2025/03/12',
+    invoice_number: 'AB62186791',
+    name: 'Robestar SDZ TW 10mg 3x10/Bx',
+    count: 30,
+    price: '63.40',
+    total: '1902',
+    tax: '500',
+    tax_type: '1',
+  },
+  {
+    id: 2,
+    date: '2025/03/15',
+    invoice_number: 'AB62186792',
+    name: 'Berotec N 10ml(HFA) MA 100mcg',
+    count: 40,
+    price: '63.40',
+    total: '2002',
+    tax: '200',
+    tax_type: '1',
+  },
+  {
+    id: 3,
+    date: '2025/03/30',
+    invoice_number: 'AB62186793',
+    name: 'Robestar SDZ TW 10mg 3x10/Bx',
+    count: 50,
+    price: '63.40',
+    total: '11902',
+    tax: '1500',
+    tax_type: '1',
   },
 ]

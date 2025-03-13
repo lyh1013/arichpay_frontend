@@ -28,6 +28,10 @@ export const menus: Menu[] = [
         to: '/credit-note',
         title: '折讓單查詢',
       },
+      {
+        to: '/credit-note-confirm',
+        title: '折讓單確認',
+      },
     ],
   },
 ]

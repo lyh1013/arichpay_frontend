@@ -1,4 +1,6 @@
-export const headers = [
+import { type DataTableHeader } from '../types'
+
+export const headers: DataTableHeader[] = [
   { title: '操作', key: 'actions', sortable: false, align: 'center' },
   { title: '日期', key: 'date' },
   { title: '發票號碼', key: 'invoice_number' },

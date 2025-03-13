@@ -18,7 +18,7 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
       <v-btn
         prepend-icon="mdi-text-box-search-outline"
         text="對帳單查詢"
-        class="w-100 search-btn animate__animated animate__fadeInUp animate__faster"
+        class="w-100 search-btn animate__animated animate__fadeInUp"
         variant="flat"
         to="/statement"
       />
@@ -28,9 +28,10 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
       <v-btn
         prepend-icon="mdi-text-box-search-outline "
         text="折讓單查詢"
-        class="w-100 search-btn animate__animated animate__fadeInUp animate__faster"
+        class="w-100 search-btn animate__animated animate__fadeInUp"
         variant="flat"
         to="/credit-note"
+        style="animation-delay: 0.5s"
       />
     </v-col>
 
@@ -40,6 +41,7 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
         prepend-icon="mdi-login"
         title="快速登入"
         min-height="350"
+        style="animation-delay: 0.8s"
       >
         <v-form @submit.prevent="onSubmit" class="mt-4 d-flex flex-column ga-6">
           <TextField name="account" label="帳號" prepend-inner-icon="mdi-account-outline" />

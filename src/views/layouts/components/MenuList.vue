@@ -17,7 +17,7 @@ const menuItems = ref(menus)
         <span v-bind="props"> {{ title }} </span>
       </template>
 
-      <v-list class="mt-2" active-class="font-weight-bold text-primary">
+      <v-list class="mt-2" active-class="font-weight-bold text-primary" rounded="lg">
         <v-list-item v-for="{ to, title } in children" :key="title" :to :title />
       </v-list>
     </v-menu>

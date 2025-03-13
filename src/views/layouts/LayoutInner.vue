@@ -8,7 +8,7 @@ const { mdAndUp } = useDisplay()
 <template>
   <v-layout
     class="d-flex flex-column w-100 background"
-    :style="{ overflow: mdAndUp ? 'hidden' : 'auto' }"
+    :style="{ 'overflow-y': mdAndUp ? 'hidden' : 'auto' }"
   >
     <HeaderTop />
 

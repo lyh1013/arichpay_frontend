@@ -8,6 +8,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    DataTable: typeof import('./src/components/DataTable.vue')['default']
+    DataTale: typeof import('./src/components/DataTale.vue')['default']
     DatePicker: typeof import('./src/components/DatePicker.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']

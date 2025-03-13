@@ -36,6 +36,9 @@ export const navigation = reactive<Navigation>({
   'credit-note': {
     title: '折讓單查詢',
   },
+  'credit-note-confirm': {
+    title: '折讓單確認',
+  },
   profile: {
     title: '會員資料',
   },

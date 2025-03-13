@@ -12,7 +12,7 @@ export default [
   {
     path: '/statement',
     name: 'statement',
-    component: () => import('@/views/bill/statement/StatementView.vue'),
+    component: () => import('@/views/bill/statement/SearchView.vue'),
     meta: {
       requiresAuth: true,
     },
@@ -20,7 +20,15 @@ export default [
   {
     path: '/credit-note',
     name: 'credit-note',
-    component: () => import('@/views/bill/creditNote/CreditNoteView.vue'),
+    component: () => import('@/views/bill/creditNote/SearchView.vue'),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/credit-note-confirm',
+    name: 'credit-note-confirm',
+    component: () => import('@/views/bill/creditNote/ConfirmView.vue'),
     meta: {
       requiresAuth: true,
     },

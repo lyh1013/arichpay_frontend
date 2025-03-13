@@ -29,6 +29,7 @@ const onSubmit = handleSubmit(async (values: Record<string, string>) => {
         <v-row class="ga-4">
           <v-col cols="12" class="d-flex justify-center align-center flex-column">
             <v-img max-width="200" width="200" src="@images/logo/logo.png" cover />
+            <v-card-title class="font-weight-bold">客戶服務平台</v-card-title>
           </v-col>
 
           <v-col cols="12">

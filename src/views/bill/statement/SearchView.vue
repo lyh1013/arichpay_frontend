@@ -8,7 +8,6 @@ const [isPrint, setPrint] = useState(false)
 
 const dateRange = ref<(string | Date)[]>([])
 
-const sortBy = ref([{ key: 'date', order: 'asc' }])
 const hideFooter = computed(() => items.length < 10 || isPrint.value)
 
 async function handlePrint() {
@@ -35,7 +34,6 @@ watch(
   <v-container class="py-8">
     <DataTable
       title="對帳單查詢"
-      v-model:sortBy="sortBy"
       :items
       :headers
       :filterKeys="['name', 'invoice_number']"

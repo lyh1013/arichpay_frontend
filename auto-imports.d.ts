@@ -287,7 +287,7 @@ declare global {
   const useSpeechSynthesis: typeof import('@vueuse/core')['useSpeechSynthesis']
   const useState: typeof import('./src/composables/useState')['useState']
   const useStepper: typeof import('@vueuse/core')['useStepper']
-  const useStorage: typeof import('@vueuse/core')['useStorage']
+  const useStorage: typeof import('./src/composables/useStorage')['useStorage']
   const useStorageAsync: typeof import('@vueuse/core')['useStorageAsync']
   const useStyleTag: typeof import('@vueuse/core')['useStyleTag']
   const useSubmitCount: typeof import('vee-validate')['useSubmitCount']
@@ -636,7 +636,7 @@ declare module 'vue' {
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>
     readonly useState: UnwrapRef<typeof import('./src/composables/useState')['useState']>
     readonly useStepper: UnwrapRef<typeof import('@vueuse/core')['useStepper']>
-    readonly useStorage: UnwrapRef<typeof import('@vueuse/core')['useStorage']>
+    readonly useStorage: UnwrapRef<typeof import('./src/composables/useStorage')['useStorage']>
     readonly useStorageAsync: UnwrapRef<typeof import('@vueuse/core')['useStorageAsync']>
     readonly useStyleTag: UnwrapRef<typeof import('@vueuse/core')['useStyleTag']>
     readonly useSubmitCount: UnwrapRef<typeof import('vee-validate')['useSubmitCount']>

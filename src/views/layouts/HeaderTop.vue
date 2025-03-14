@@ -5,7 +5,8 @@ import { useDisplay } from 'vuetify'
 
 const { mdAndUp } = useDisplay()
 const route = useRoute()
-// const { user } = storeToRefs(useAuth())
+const { user, isLoggedIn } = storeToRefs(useAuth())
+const { logout } = useAuth()
 
 const menuOpen = ref(false)
 
@@ -38,17 +39,23 @@ function toggleMenu() {
 
       <v-spacer v-show="mdAndUp" />
 
-      <!-- <v-btn prepend-icon="mdi-account-outline" text="會員登入" variant="flat" to="/signin" /> -->
+      <v-btn
+        v-if="!isLoggedIn"
+        prepend-icon="mdi-account-outline"
+        text="會員登入"
+        variant="flat"
+        to="/signin"
+      />
 
-      <div class="d-flex align-center ga-2">
-        <span>Hi! 艾創點工程師</span>
+      <div v-else class="d-flex align-center ga-2">
+        <span class="d-none d-md-block">Hi! 艾創點工程師</span>
         <v-btn icon="mdi-account-outline" variant="outlined" to="/profile" size="small" />
-        <v-btn icon="mdi-logout" variant="outlined" size="small" />
+        <v-btn icon="mdi-logout" variant="outlined" size="small" @click="logout" />
       </div>
     </v-toolbar>
 
     <v-navigation-drawer v-model="menuOpen" temporary>
-      <v-card flat class="pa-4">
+      <v-card variant="flat" class="pa-4">
         <div class="d-flex align-center justify-between">
           <router-link to="/" class="w-100">
             <v-img max-width="120" src="@images/logo/logo.png" cover />

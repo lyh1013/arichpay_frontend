@@ -16,12 +16,14 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
   <v-row>
     <v-col cols="12" lg="4" md="6" sm="8" offset-lg="4" offset-md="3" offset-sm="2">
       <v-card class="pa-8">
-        <v-row class="ga-4">
+        <v-row class="ga-2">
           <v-col cols="12" class="d-flex justify-center">
             <v-img max-width="200" src="@images/logo/logo.png" cover />
           </v-col>
 
-          <v-alert variant="text"> 輸入您的電子郵件帳號....... </v-alert>
+          <v-alert variant="text">
+            請輸入您的電子郵件帳號，我們會寄送重設密碼連結至您的信箱。
+          </v-alert>
 
           <v-col cols="12">
             <v-form @submit.prevent="onSubmit" class="d-flex flex-column ga-6">

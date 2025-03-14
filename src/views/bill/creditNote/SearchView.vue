@@ -8,16 +8,12 @@ const [loading, setLoading] = useState(false)
 const [isPrint, setPrint] = useState(false)
 
 const dateRange = ref()
-const sortBy = ref([{ key: 'date', order: 'asc' }])
 
 async function handlePrint(id: string | number) {
-  setLoading(true)
-
   await setPrint(true)
 
   const stop = useEventListener(window, 'afterprint', () => {
     setPrint(false)
-    setLoading(false)
 
     stop()
   })
@@ -39,7 +35,6 @@ watch(
   <v-container class="py-8">
     <DataTable
       title="折讓單查詢"
-      v-model:sortBy="sortBy"
       :items
       :headers
       :filterKeys="['name', 'invoice_number']"

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const [loading, setLoading] = useState(false)
 const router = useRouter()
-// const { login } = useAuth()
+const { login } = useAuth()
 
 const { handleSubmit } = useForm({
   validationSchema: { account: 'required', password: 'required' },
@@ -11,12 +11,10 @@ const { handleSubmit } = useForm({
   },
 })
 
-const onSubmit = handleSubmit(async (values: Record<string, string>) => {
+const onSubmit = handleSubmit(async (values: { account: string; password: string }) => {
   setLoading(true)
 
-  // await login(values)
-
-  router.push('/')
+  await login(values)
 
   setLoading(false)
 })
@@ -41,8 +39,11 @@ const onSubmit = handleSubmit(async (values: Record<string, string>) => {
 
                 <v-col cols="12">
                   <div class="d-flex align-end flex-column w-100">
-                    <RouterLink class="text-blue text-body-2" to="/forget" rel="noopener noreferrer"
-                      >忘記密碼</RouterLink
+                    <RouterLink
+                      class="text-blue text-body-2 mb-1"
+                      to="/forget"
+                      rel="noopener noreferrer"
+                      >忘記密碼?</RouterLink
                     >
                     <TextField
                       name="password"

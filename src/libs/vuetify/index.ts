@@ -33,6 +33,10 @@ export default createVuetify({
           'primary-darken': '#312B85',
           'primary-darken-1': '#807da3',
           'primary-lighten-1': '#C5C2E4',
+          success: '#00BFA5',
+          info: '#00BAD1',
+          warning: '#FF8F00',
+          'error-lighten': '#FF5252',
         },
         variables: {
           'tooltip-background': '#2F2B3D',
@@ -92,5 +96,13 @@ export default createVuetify({
   },
   display: {
     mobileBreakpoint: 'sm',
+    thresholds: {
+      xs: 400,
+      sm: 560,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+      xxl: 2560,
+    },
   },
 })

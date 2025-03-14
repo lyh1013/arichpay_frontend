@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig, type UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import basicSsl from '@vitejs/plugin-basic-ssl'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
@@ -13,14 +13,14 @@ import Unfonts from 'unplugin-fonts/vite'
 // https://vitejs.dev/config/
 export default defineConfig((): UserConfig => {
   // mode: development | staging | production
-  const environment = 'development'
+  const environment = 'production'
 
   return {
-    base: '/',
+    base: '/arichpay_web',
     mode: environment,
     plugins: [
       vue({ template: { transformAssetUrls } }),
-      // basicSsl(),
+      basicSsl(),
       // vueDevTools(),
       Unfonts({
         google: {

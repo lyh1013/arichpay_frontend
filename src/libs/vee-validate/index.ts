@@ -12,7 +12,7 @@ Object.entries(all).forEach(([ruleName, value]) => {
   defineRule(ruleName, value)
 })
 
-defineRule('required', (value: any) => validatorRequired(value))
+defineRule('required', (value: undefined) => validatorRequired(value))
 
 // Load validations messages
 const localeConfigurations: Record<string, string> = {

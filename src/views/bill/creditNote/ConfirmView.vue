@@ -2,31 +2,41 @@
 import { creditNoteData as items } from '@/fake-data/bill'
 import { dateFormat } from '@/utils/formatters'
 import { headers } from '@/utils/table/credit-note'
+import type { CreditNote } from '@/utils/types'
 
 const [loading, setLoading] = useState(false)
 const [isPrint, setPrint] = useState(false)
+const [isDialogOpen, setDialogOpen] = useState(false)
+const [isAlert, setAlert] = useState(false)
 
 const dateRange = ref<(string | Date)[]>([])
 
-const selected = ref([])
-const sortBy = ref([{ key: 'date', order: 'asc' }])
+const selected = ref<CreditNote[]>([])
+
 const hideFooter = computed(() => items.length < 10 || isPrint.value)
 
 async function handlePrint(id?: string | number) {
-  setLoading(true)
-
   await setPrint(true)
 
   console.log(selected.value)
 
   const stop = useEventListener(window, 'afterprint', () => {
     setPrint(false)
-    setLoading(false)
 
     stop()
   })
 
   window.print()
+}
+
+function handleCheck() {
+  if (!selected.value.length) {
+    setAlert(true)
+
+    return
+  }
+
+  setDialogOpen(true)
 }
 
 watch(
@@ -41,7 +51,6 @@ watch(
   <v-container class="py-8 py-md-6">
     <DataTable
       title="折讓單確認"
-      v-model:sortBy="sortBy"
       v-model:selected="selected"
       :items
       :headers
@@ -65,15 +74,22 @@ watch(
       <template #actions>
         <div class="d-flex align-center ga-3">
           <v-btn
+            text="確認折讓"
+            prepend-icon="mdi-check"
+            rounded="lg"
+            variant="flat"
+            :loading
+            @click="handleCheck"
+          />
+          <v-btn
             text="列印"
             prepend-icon="mdi-printer-outline"
             rounded="lg"
-            variant="tonal"
+            variant="outlined"
             color="indigo-darken-2"
             :loading="isPrint"
             @click="handlePrint"
           />
-          <v-btn text="確認折讓" prepend-icon="mdi-check" rounded="lg" variant="flat" :loading />
         </div>
       </template>
 
@@ -86,6 +102,34 @@ watch(
         />
       </template>
     </DataTable>
+
+    <AlertDialog
+      v-model="isDialogOpen"
+      icon="mdi-help-circle"
+      transition="scale-transition"
+      persistent
+      type="warning"
+      size="xs"
+    >
+      <div v-if="selected.length === 1">
+        確定要折讓
+        <span class="bg-grey-lighten-4 pa-2 rounded-lg">{{ selected[0].invoice_number }}</span>
+        嗎?
+      </div>
+
+      <div v-else>確定要折讓選取的 {{ selected.length }} 筆資料嗎?</div>
+
+      <template #action>
+        <v-btn text="確認" variant="flat" color="deep-purple-lighten-1" />
+      </template>
+    </AlertDialog>
+
+    <SnackbarToast v-model="isAlert" type="error" rounded="lg">
+      <div class="d-flex align-center ga-2">
+        <v-icon icon="mdi-alert" />
+        <span class="text-body-1">請選擇至少一筆資料</span>
+      </div>
+    </SnackbarToast>
   </v-container>
 </template>
 

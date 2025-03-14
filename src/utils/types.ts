@@ -18,3 +18,17 @@ export type DataTable = {
   tax?: string
   tax_type?: string
 }
+
+export type Thresholds = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+
+export type CreditNote = {
+  id: number
+  date: string
+  invoice_number: string
+  name: string
+  count: number
+  price: string
+  total: string
+  tax: string
+  tax_type: string
+}

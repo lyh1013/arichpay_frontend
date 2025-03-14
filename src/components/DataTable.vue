@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { useDisplay } from 'vuetify'
 
+import type { CreditNote } from '@/utils/types'
 import { type DataTableHeader, type DataTable } from '@/utils/types'
 
-const sortBy = defineModel<{ key: string; order: string }[]>('sortBy')
-const selected = defineModel<string[] | number[]>('selected')
+// const sortBy = defineModel<{ key: string; order: 'asc' | 'desc' }[]>('sortBy')
+const selected = defineModel<CreditNote[]>('selected')
 
 const { mdAndUp } = useDisplay()
 
 const search = ref('')
+const sortBy = ref<{ key: string; order: 'asc' | 'desc' }[]>([{ key: 'date', order: 'asc' }])
 
 const {
   title = '',
@@ -33,9 +35,9 @@ const {
 
 <template>
   <v-card class="pa-4 pb-0 animate__animated animate__fadeInUp">
-    <v-card-text class="d-print-none">
+    <v-card-text class="d-print-none pa-0 pa-md-4">
       <v-row class="align-center ma-0 ga-md-3" :no-gutters="mdAndUp">
-        <v-col cols="8" md="auto" class="order-1 me-auto">
+        <v-col cols="12" sm="7" md="auto" class="order-1 me-auto">
           <v-card-title class="d-flex align-center pa-0">
             <v-icon icon="mdi-text-box-search-outline" /> &nbsp;
             <span class="font-weight-bold">{{ title }} </span>
@@ -52,9 +54,10 @@ const {
 
         <v-col
           v-if="$slots.actions"
-          cols="4"
-          sm="auto"
-          class="order-2 order-md-4 d-flex justify-end"
+          cols="12"
+          sm="5"
+          md="auto"
+          class="order-2 order-md-4 d-flex justify-start justify-sm-end"
         >
           <slot name="actions" />
         </v-col>
@@ -73,6 +76,7 @@ const {
       :show-select="showSelect"
       item-value="id"
       :loading
+      return-object
       class="table"
     >
       <template v-for="(_, name) in $slots" #[name]="slotData">
@@ -98,5 +102,11 @@ const {
 
 :deep(.v-select__selection) {
   max-width: unset;
+}
+
+@media screen and (width < 576px) {
+  .table {
+    height: auto;
+  }
 }
 </style>

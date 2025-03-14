@@ -4,4 +4,5 @@ export const validationSchema: Record<string, string> = {
   invoice_address: 'required',
   delivery_address: 'required',
   file: 'required',
+  password_confirmation: 'confirmed:@password',
 }

@@ -9,7 +9,7 @@ const { handleSubmit } = useForm({
   },
 })
 
-const onSubmit = handleSubmit(async (values: Record<string, any>) => {
+const onSubmit = handleSubmit(async (values: Record<string, unknown>) => {
   console.log(values)
 })
 </script>
@@ -71,7 +71,7 @@ const onSubmit = handleSubmit(async (values: Record<string, any>) => {
                 />
               </v-col>
 
-              <v-col cols="12" sm="6">
+              <v-col cols="12">
                 <TextField
                   name="cashier"
                   prepend-inner-icon="mdi-account-cash-outline"
@@ -111,6 +111,16 @@ const onSubmit = handleSubmit(async (values: Record<string, any>) => {
                   type="password"
                   label="密碼"
                   prepend-inner-icon="mdi-lock-outline"
+                />
+              </v-col>
+
+              <v-col cols="12" sm="6">
+                <TextField
+                  name="password_confirmation"
+                  type="password"
+                  label="確認密碼"
+                  prepend-inner-icon="mdi-lock-outline"
+                  placeholder="請再輸入一次密碼"
                 />
               </v-col>
               <!-- <v-col cols="12" md="6">

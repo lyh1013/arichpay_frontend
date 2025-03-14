@@ -16,7 +16,7 @@ export default defineConfig((): UserConfig => {
   const environment = 'production'
 
   return {
-    base: '/arichpay_web',
+    base: '/arichpay_frontend',
     mode: environment,
     plugins: [
       vue({ template: { transformAssetUrls } }),
@@ -50,9 +50,9 @@ export default defineConfig((): UserConfig => {
           'vee-validate',
           unheadVueComposablesImports,
           {
-            'vue-i18n': ['createI18n', 'useI18n'],
+            // 'vue-i18n': ['createI18n', 'useI18n'],
             '@appConfig': ['cfg'],
-            '@i18n': ['i18n'],
+            // '@i18n': ['i18n'],
           },
         ],
         dirs: ['./src/stores', './src/composables'],

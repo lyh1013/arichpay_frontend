@@ -22,9 +22,9 @@ export default createVuetify({
     VDateInput,
   },
   directives,
-  locale: {
-    adapter: createVueI18nAdapter({ i18n: VueI18n, useI18n }),
-  },
+  // locale: {
+  //   adapter: createVueI18nAdapter({ i18n: VueI18n, useI18n }),
+  // },
   theme: {
     themes: {
       light: {

@@ -9,7 +9,8 @@ useHeadSafe({
 
     return navigation[route.name].title ?? ''
   },
-  titleTemplate: (title) => (title ? title + ' - ' : '') + i18n.t('sitename'),
+  // titleTemplate: (title) => (title ? title + ' - ' : '') + i18n.t('sitename'),
+  titleTemplate: (title) => (title ? title + ' - ' : '') + '久裕 Pay',
 })
 
 const LayoutAuth = defineAsyncComponent({

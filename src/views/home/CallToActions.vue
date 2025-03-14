@@ -40,7 +40,7 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
         class="pa-6 animate__animated animate__fadeInUp"
         prepend-icon="mdi-login"
         title="快速登入"
-        min-height="350"
+        min-height="calc(100vh - 590px)"
         style="animation-delay: 0.8s"
       >
         <v-form @submit.prevent="onSubmit" class="mt-4 d-flex flex-column ga-6">

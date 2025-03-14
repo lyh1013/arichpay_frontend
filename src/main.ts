@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-import { VueI18n } from '@/libs/i18n/index'
+// import { VueI18n } from '@/libs/i18n/index'
 import vuetify from '@/libs/vuetify/index'
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar'
 import { createHead } from '@unhead/vue'
@@ -21,7 +21,7 @@ const head = createHead()
 
 app.use(router)
 app.use(pinia)
-app.use(VueI18n)
+// app.use(VueI18n)
 app.use(vuetify)
 app.use(PerfectScrollbarPlugin, { componentName: 'vscrollbar' })
 app.use(head)

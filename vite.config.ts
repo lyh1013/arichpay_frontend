@@ -13,10 +13,10 @@ import Unfonts from 'unplugin-fonts/vite'
 // https://vitejs.dev/config/
 export default defineConfig((): UserConfig => {
   // mode: development | staging | production
-  const environment = 'production'
+  const environment = 'development'
 
   return {
-    base: '/arichpay_frontend',
+    base: ['production'].includes(environment) ? '/arichpay_frontend' : '/',
     mode: environment,
     plugins: [
       vue({ template: { transformAssetUrls } }),
@@ -50,9 +50,9 @@ export default defineConfig((): UserConfig => {
           'vee-validate',
           unheadVueComposablesImports,
           {
-            // 'vue-i18n': ['createI18n', 'useI18n'],
+            'vue-i18n': ['createI18n', 'useI18n'],
             '@appConfig': ['cfg'],
-            // '@i18n': ['i18n'],
+            '@i18n': ['i18n'],
           },
         ],
         dirs: ['./src/stores', './src/composables'],
@@ -66,6 +66,11 @@ export default defineConfig((): UserConfig => {
     build: {
       target: 'esnext',
       chunkSizeWarningLimit: 5000,
+    },
+    esbuild: {
+      supported: {
+        'top-level-await': true,
+      },
     },
     optimizeDeps: {
       exclude: ['vuetify', 'crypto'],

@@ -56,6 +56,10 @@ a {
   border-radius: 10px;
 }
 
+.v-snackbar__content {
+  background: white;
+}
+
 @media (min-width: 1920px) {
   .v-container {
     max-width: 1310px !important;

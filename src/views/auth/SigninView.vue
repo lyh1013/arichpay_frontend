@@ -7,8 +7,8 @@ const { handleSubmit } = useForm({
   validationSchema: { account: 'required', password: 'required' },
   initialValues: {
     account: 'ideaxpress',
-    password: 'arichpay',
-  },
+    password: 'arichpay'
+  }
 })
 
 const onSubmit = handleSubmit(async (values: { account: string; password: string }) => {
@@ -22,7 +22,16 @@ const onSubmit = handleSubmit(async (values: { account: string; password: string
 
 <template>
   <v-row>
-    <v-col cols="12" lg="4" md="6" sm="8" offset-lg="4" offset-md="3" offset-sm="2">
+    <v-col
+      cols="12"
+      lg="4"
+      md="6"
+      sm="8"
+      offset-lg="4"
+      offset-md="3"
+      offset-sm="2"
+      class="d-flex justify-center align-center"
+    >
       <v-card class="pa-8">
         <v-row class="ga-4">
           <v-col cols="12" class="d-flex justify-center align-center flex-column">

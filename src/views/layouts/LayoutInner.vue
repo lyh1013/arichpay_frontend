@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useDisplay } from 'vuetify'
+
 import HeaderTop from './HeaderTop.vue'
+import CookieToast from './components/CookieToast.vue'
 
 const { mdAndUp } = useDisplay()
 </script>
@@ -14,6 +16,7 @@ const { mdAndUp } = useDisplay()
 
     <v-main>
       <RouterView />
+      <CookieToast />
     </v-main>
   </v-layout>
 </template>

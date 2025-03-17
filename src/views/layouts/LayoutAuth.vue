@@ -2,6 +2,7 @@
 import '@/assets/styles/auth.css'
 
 import HeaderTop from './HeaderTop.vue'
+import FooterBottom from './FooterBottom.vue'
 </script>
 
 <template>
@@ -14,9 +15,13 @@ import HeaderTop from './HeaderTop.vue'
 
       <v-container
         style="height: calc(100vh - 80px)"
-        class="d-table d-md-flex align-center justify-center"
+        class="d-table d-sm-flex align-center justify-center flex-column"
       >
-        <RouterView />
+        <div class="w-100 h-100 d-flex flex-column justify-between">
+          <RouterView />
+
+          <FooterBottom />
+        </div>
       </v-container>
     </v-main>
   </v-layout>
@@ -57,7 +62,7 @@ import HeaderTop from './HeaderTop.vue'
 .shape-2 {
   background: url(../../assets/images/shapes/bg-shape-2.webp);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   position: absolute;
   top: 0;
   left: 0;

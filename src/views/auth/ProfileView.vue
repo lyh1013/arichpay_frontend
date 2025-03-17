@@ -5,8 +5,8 @@ const { handleSubmit } = useForm({
   validationSchema,
   initialValues: {
     account: 'ideaxpress',
-    name: '艾創點工程師',
-  },
+    name: '艾創點工程師'
+  }
 })
 
 const onSubmit = handleSubmit(async (values: Record<string, unknown>) => {

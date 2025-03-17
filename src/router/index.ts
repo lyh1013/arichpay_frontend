@@ -10,10 +10,10 @@ const routes = [...auth, ...pages, ...others]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
+  routes
 })
 
-router.beforeEach(async (to) => {
+router.beforeEach(async to => {
   const { getLocalStorage } = useStorage()
   const { isLoggedIn } = storeToRefs(useAuth())
 

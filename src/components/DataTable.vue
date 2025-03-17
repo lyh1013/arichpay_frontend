@@ -20,7 +20,7 @@ const {
   hideFooter = false,
   isPrint = false,
   showSelect = false,
-  loading = false,
+  loading = false
 } = defineProps<{
   title: string
   headers: DataTableHeader[]
@@ -104,7 +104,7 @@ const {
   max-width: unset;
 }
 
-@media screen and (width < 576px) {
+@media screen and (width < 560px) {
   .table {
     height: auto;
   }

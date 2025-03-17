@@ -7,8 +7,8 @@ const { mdAndUp } = useDisplay()
 
 <template>
   <v-layout
-    class="d-flex flex-column w-100 background"
-    :style="{ 'overflow-y': mdAndUp ? 'hidden' : 'auto' }"
+    class="d-flex flex-column background"
+    :style="{ overflow: mdAndUp ? 'hidden' : 'visible' }"
   >
     <HeaderTop />
 
@@ -30,7 +30,8 @@ const { mdAndUp } = useDisplay()
   top: -250px;
   left: 50%;
   transform: translateX(-50%);
-  width: 650px;
+  max-width: 650px;
+  width: 100%;
   height: 550px;
   border-radius: 50%;
   background-image: linear-gradient(260deg, #8750f7 0%, rgba(115, 67, 210, 0.1) 100%);

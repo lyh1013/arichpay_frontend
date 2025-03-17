@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { useDisplay } from 'vuetify'
+
+const { mdAndUp } = useDisplay()
 const [loading, setLoading] = useState(false)
 
 const { handleSubmit, resetForm } = useForm({
-  validationSchema: { account: 'required', password: 'required' },
+  validationSchema: { account: 'required', password: 'required' }
 })
 
 const onSubmit = handleSubmit((values: Record<string, string>) => {
@@ -40,7 +43,7 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
         class="pa-6 animate__animated animate__fadeInUp"
         prepend-icon="mdi-login"
         title="快速登入"
-        min-height="calc(100vh - 590px)"
+        :min-height="mdAndUp ? 'calc(100vh - 590px)' : 'auto'"
         style="animation-delay: 0.8s"
       >
         <v-form @submit.prevent="onSubmit" class="mt-4 d-flex flex-column ga-6">

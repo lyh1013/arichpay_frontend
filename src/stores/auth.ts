@@ -39,6 +39,6 @@ export const useAuth = defineStore('auth', () => {
     isLoggedIn,
 
     login,
-    logout,
+    logout
   }
 })

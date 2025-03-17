@@ -4,7 +4,7 @@
   background-position: center;
 }
 
-@media screen and (width > 576px) {
+@media screen and (width > 560px) {
   .auth-background {
     background-size: contain;
   }

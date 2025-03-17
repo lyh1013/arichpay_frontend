@@ -80,6 +80,8 @@ watch(
 @media print {
   .print-img {
     margin-top: 0;
+    width: 100%;
+    max-width: 100%;
   }
 
   :deep(.v-card) {

@@ -40,4 +40,11 @@ import { newsData } from '@/fake-data/news'
 .table {
   height: calc(100vh - 210px);
 }
+
+@media screen and (width < 560px) {
+  .table {
+    height: auto;
+    white-space: nowrap;
+  }
+}
 </style>

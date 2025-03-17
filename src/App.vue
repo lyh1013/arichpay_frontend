@@ -9,22 +9,22 @@ useHeadSafe({
 
     return navigation[route.name].title ?? ''
   },
-  titleTemplate: (title) => (title ? title + ' - ' : '') + i18n.t('sitename'),
+  titleTemplate: title => (title ? title + ' - ' : '') + i18n.t('sitename')
 })
 
 const LayoutAuth = defineAsyncComponent({
   loader: () => import('./views/layouts/LayoutAuth.vue'),
-  delay: 0,
+  delay: 0
 })
 
 const LayoutInner = defineAsyncComponent({
   loader: () => import('./views/layouts/LayoutInner.vue'),
-  delay: 0,
+  delay: 0
 })
 
 const LayoutMisc = defineAsyncComponent({
   loader: () => import('./views/layouts/LayoutMisc.vue'),
-  delay: 0,
+  delay: 0
 })
 
 const layout = computed(() => {

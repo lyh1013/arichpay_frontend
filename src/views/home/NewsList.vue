@@ -37,5 +37,13 @@ import { newsData } from '@/fake-data/news'
   box-shadow: 0px 26px 45.4px 0px rgba(186, 193, 225, 0.72);
   border-radius: 24px;
   height: calc(100vh - 300px);
+  max-width: 100%;
+}
+
+@media screen and (width < 560px) {
+  .table {
+    height: auto;
+    white-space: nowrap;
+  }
 }
 </style>

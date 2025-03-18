@@ -40,13 +40,13 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
 
     <v-col cols="12">
       <v-card
-        class="pa-6 animate__animated animate__fadeInUp"
+        class="pa-6 animate__animated animate__fadeInUp d-flex align-center justify-center flex-column"
         prepend-icon="mdi-login"
         title="快速登入"
-        :min-height="mdAndUp ? 'calc(100vh - 590px)' : 'auto'"
+        :min-height="mdAndUp ? 'calc(100vh - 620px)' : 'auto'"
         style="animation-delay: 0.8s"
       >
-        <v-form @submit.prevent="onSubmit" class="mt-4 d-flex flex-column ga-6">
+        <v-form @submit.prevent="onSubmit" class="mt-4 d-flex flex-column ga-6 w-100">
           <TextField name="account" label="帳號" prepend-inner-icon="mdi-account-outline" />
 
           <TextField
@@ -65,8 +65,7 @@ const onSubmit = handleSubmit((values: Record<string, string>) => {
 
 <style scoped>
 .search-btn {
-  height: 10vh;
-  min-height: 120px;
+  min-height: 135px;
   font-size: 1.125rem;
   font-weight: 600;
   background: linear-gradient(80deg, #ac66d5 0%, #6692d5 100%);

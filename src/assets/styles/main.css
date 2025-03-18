@@ -60,6 +60,10 @@ a {
   background: white;
 }
 
+.v-messages__message {
+  font-size: 14px;
+}
+
 @media (min-width: 1920px) {
   .v-container {
     max-width: 1310px !important;

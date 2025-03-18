@@ -16,10 +16,10 @@ const onSubmit = handleSubmit(async (values: Record<string, unknown>) => {
 
 <template>
   <v-row>
-    <v-col cols="12" md="8" offset-md="2">
+    <v-col cols="12" md="8" offset-md="2" class="d-flex justify-center align-center">
       <v-card class="pa-4">
         <v-card-text>
-          <h4 class="form-title mb-2">基本資料</h4>
+          <h4 class="form-title mb-2">個人基本資料</h4>
 
           <div class="mb-8">
             <!-- <v-alert type="success"> 已啟用電子對帳功能，啟用狀態:紙本折讓 </v-alert> -->
